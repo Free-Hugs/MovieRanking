@@ -6,5 +6,5 @@ dependencyResolutionManagement {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "Movie Ranking"
+rootProject.name = "Movie_Ranking"
 include ':app'
