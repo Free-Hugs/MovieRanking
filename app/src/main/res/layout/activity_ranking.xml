@@ -16,15 +16,15 @@
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rankingTitle"
-        app:layout_constraintVertical_bias="0.071">
+        app:layout_constraintVertical_bias="0.101">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/searchRankingLayout"
+            android:id="@+id/searchWatchLayout"
             android:layout_width="265dp"
             android:layout_height="match_parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/searchRankingTitle"
+                android:id="@+id/searchWatchTitle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Type movie name..." />
@@ -32,7 +32,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/searchRankingButton"
+            android:id="@+id/searchWatchButton"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -57,7 +57,7 @@
         app:layout_constraintVertical_bias="0.094" />
 
     <ListView
-        android:id="@+id/rankingList"
+        android:id="@+id/watchList"
         android:layout_width="367dp"
         android:layout_height="375dp"
         app:layout_constraintBottom_toBottomOf="parent"

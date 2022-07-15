@@ -4,52 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#272727"
-    tools:context=".MainActivity">
+    tools:context=".NotWatched">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="375dp"
-        android:layout_height="106dp"
-        android:gravity="center"
-        android:text="Welcome !"
-        android:textSize="50dp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.094" />
-
-    <androidx.appcompat.widget.AppCompatButton
-    android:id="@+id/rated"
-        android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:background="@drawable/rounded_button"
-        android:backgroundTint="#FF0059"
-        android:text="Your ranking"
-        android:textSize="17dp"
+    <ListView
+        android:id="@+id/watchList"
+        android:layout_width="367dp"
+        android:layout_height="375dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.17" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/notViewed"
-        android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:background="@drawable/rounded_button"
-        android:backgroundTint="#0090FF"
-        android:text="Not watched yet"
-        android:textSize="17dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rated"
-        app:layout_constraintVertical_bias="0.135" />
+        app:layout_constraintVertical_bias="0.343" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -58,8 +24,9 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/watchTitle"
         app:layout_constraintVertical_bias="0.101">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -86,4 +53,17 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/watchTitle"
+        android:layout_width="375dp"
+        android:layout_height="106dp"
+        android:gravity="center"
+        android:text="Must Watch"
+        android:textColor="@color/white"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.094" />
 </androidx.constraintlayout.widget.ConstraintLayout>
