@@ -63,12 +63,12 @@
         app:layout_constraintVertical_bias="0.101">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/searchLayout"
+            android:id="@+id/searchRankingLayout"
             android:layout_width="265dp"
             android:layout_height="match_parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/searchTitle"
+                android:id="@+id/searchRankingTitle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Type movie name..." />
@@ -76,12 +76,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/searchButton"
+            android:id="@+id/searchRankingButton"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_button"
-            android:backgroundTint="#676767"
+            android:backgroundTint="#9D00FF"
             android:text="Search" />
 
     </LinearLayout>
