@@ -4,7 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NotWatched">
+    tools:context=".NotWatched"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-28dp">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/watchBackButton"
+        android:layout_width="95dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="#FFA200"
+        android:elevation="15dp"
+        android:stateListAnimator="@null"
+        android:text="back"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/watchTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <ListView
         android:id="@+id/watchList"
@@ -12,10 +34,9 @@
         android:layout_height="375dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.343" />
+        app:layout_constraintVertical_bias="0.285" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -27,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/watchTitle"
-        app:layout_constraintVertical_bias="0.101">
+        app:layout_constraintVertical_bias="0.039">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/searchWatchLayout"
@@ -65,5 +86,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.094" />
+        app:layout_constraintVertical_bias="0.145" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
