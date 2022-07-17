@@ -2,6 +2,7 @@ package com.example.movieranking;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,10 +19,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class AsyncJSONDataTitle extends AsyncTask<String, Void, JSONObject> {
+    private ArrayAdapter<String> myTitleAdapter;
+    private ArrayAdapter<String> myIdAdapter;
     private AppCompatActivity myActivity;
 
-    public AsyncJSONDataTitle(AppCompatActivity myActivity_){
+    public AsyncJSONDataTitle(ArrayAdapter adapter, ArrayAdapter idAdapter, AppCompatActivity myActivity_){
         myActivity = myActivity_;
+        myIdAdapter = idAdapter;
+        myTitleAdapter = adapter;
     }
 
     protected JSONObject doInBackground(String... strings){
@@ -60,8 +65,11 @@ public class AsyncJSONDataTitle extends AsyncTask<String, Void, JSONObject> {
             JSONArray titles = j.getJSONArray("results");
             for (int i = 0; i < titles.length(); i++)
             {
-                Log.i("id", titles.getJSONObject(i).getString("id"));
-                Log.i("title", titles.getJSONObject(i).getString("title"));
+                myTitleAdapter.add(titles.getJSONObject(i).getString("title"));
+                myIdAdapter.add(titles.getJSONObject(i).getString("id"));
+            }
+            for(int k=0; k<myTitleAdapter.getCount(); k++){
+                Log.i("title", myTitleAdapter.getItem(k));
             }
         } catch (JSONException e) {
             e.printStackTrace();

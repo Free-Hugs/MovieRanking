@@ -31,11 +31,11 @@ public class SearchResults extends AppCompatActivity {
         String url = new String("https://imdb-api.com/en/API/SearchTitle/k_wwlhrk36/" + title);
         Log.i("request", url);
 
-        ArrayAdapter<String> titles = new ArrayAdapter<String>(results.getContext(), R.layout.multicolumn_layout);
-        ArrayAdapter<String> ids = new ArrayAdapter<String>(results.getContext(), R.layout.multicolumn_layout);
-        ArrayAdapter<String> directors = new ArrayAdapter<String>(results.getContext(), R.layout.multicolumn_layout);
+        ArrayAdapter<String> titles = new ArrayAdapter<String>(results.getContext(), R.layout.result_list_layout);
+        ArrayAdapter<String> ids = new ArrayAdapter<String>(results.getContext(), R.layout.result_list_layout);
+        ArrayAdapter<String> directors = new ArrayAdapter<String>(results.getContext(), R.layout.result_list_layout);
 
-        AsyncJSONDataTitle resultTitle = new AsyncJSONDataTitle(SearchResults.this);
+        AsyncJSONDataTitle resultTitle = new AsyncJSONDataTitle(titles, ids, SearchResults.this);
         resultTitle.execute(url);
 
         populateList(titles, directors);
