@@ -38,6 +38,10 @@ public class SearchResults extends AppCompatActivity {
         AsyncJSONDataTitle resultTitle = new AsyncJSONDataTitle(SearchResults.this);
         resultTitle.execute(url);
 
+        populateList(titles, directors);
+        ResultsAdapter adapter = new ResultsAdapter(this, movies);
+
+        results.setAdapter(adapter);
 
         Button back = findViewById(R.id.resultBackButton);
         back.setOnClickListener(new View.OnClickListener() {
@@ -48,4 +52,13 @@ public class SearchResults extends AppCompatActivity {
             }
         });
     }
+    private void populateList(ArrayAdapter<String> titles, ArrayAdapter<String> directors) {
+        movies = new ArrayList<HashMap>();
+        for(int i = 0; i<titles.getCount(); i++){
+            HashMap temp = new HashMap();
+            temp.put("First", String.valueOf(titles.getItem(i)));
+            temp.put("Second", String.valueOf(directors.getItem(i)));
+            movies.add(temp);
+        }
+    };
 }

@@ -1,6 +1,7 @@
 package com.example.movieranking;
 
 import android.app.Activity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -12,6 +13,12 @@ import java.util.HashMap;
 public class ResultsAdapter extends BaseAdapter {
     public ArrayList<HashMap> list;
     Activity activity;
+
+    public ResultsAdapter(Activity activity, ArrayList<HashMap> list){
+        super();
+        this.activity = activity;
+        this.list = list;
+    }
 
     @Override
     public int getCount() {
@@ -33,7 +40,27 @@ public class ResultsAdapter extends BaseAdapter {
         TextView txtSecond;
     }
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+        LayoutInflater inflater =  activity.getLayoutInflater();
+
+        if (convertView == null)
+        {
+            convertView = inflater.inflate(R.layout.result_list_layout, null);
+            holder = new ViewHolder();
+            holder.txtFirst = (TextView) convertView.findViewById(R.id.FirstText);
+            holder.txtSecond = (TextView) convertView.findViewById(R.id.SecondText);
+            convertView.setTag(holder);
+        }
+        else
+        {
+            holder = (ViewHolder) convertView.getTag();
+        }
+
+        HashMap map = list.get(position);
+        holder.txtFirst.setText((CharSequence) map.get("First"));
+        holder.txtSecond.setText((CharSequence) map.get("Second"));
+
+        return convertView;
     }
 }
