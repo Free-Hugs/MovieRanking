@@ -7,12 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Database db = new Database(MainActivity.this);
+
+        TextInputEditText search = findViewById(R.id.searchTitle);
+
 
         Button ranking = findViewById(R.id.rated);
         ranking.setOnClickListener(new View.OnClickListener() {
