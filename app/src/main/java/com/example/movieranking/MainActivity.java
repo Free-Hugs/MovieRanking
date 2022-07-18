@@ -18,16 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
         Database db = new Database(MainActivity.this);
 
-        TextInputEditText title = findViewById(R.id.searchTitle);
-        Button search = findViewById(R.id.searchButton);
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SearchResults.class);
-                intent.putExtra("title", title.getText().toString());
-                startActivity(intent);
-            }
-        });
+        TextInputEditText search = findViewById(R.id.searchTitle);
+
 
         Button ranking = findViewById(R.id.rated);
         ranking.setOnClickListener(new View.OnClickListener() {
