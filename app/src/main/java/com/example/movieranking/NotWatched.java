@@ -14,7 +14,7 @@ public class NotWatched extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_not_watched);
 
-        Button watchBack = findViewById(R.id.watchBackButton);
+        Button watchBack = findViewById(R.id.backButton);
         watchBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

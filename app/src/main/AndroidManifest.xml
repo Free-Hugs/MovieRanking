@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".Result"
+            android:exported="false" />
+        <activity
             android:name=".NotWatched"
             android:exported="false" />
         <activity
